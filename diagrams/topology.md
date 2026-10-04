@@ -9,9 +9,9 @@ flowchart TB
     WLC[Cisco Virtual WLC]
 
     subgraph Wireless["Wireless Infrastructure"]
-        AP1[Cisco AIR-CAP2602E<br/>AP1]
-        AP2[Cisco AIR-CAP2602E<br/>AP2]
-        AP3[Cisco AIR-CAP2602E<br/>AP3]
+        AP1[Cisco AIR-CAP2602E<br/>AP1 · 2.4 GHz ch 1]
+        AP2[Cisco AIR-CAP2602E<br/>AP2 · 2.4 GHz ch 6]
+        AP3[Cisco AIR-CAP2602E<br/>AP3 · 2.4 GHz ch 11]
     end
 
     Clients[Wireless Clients]

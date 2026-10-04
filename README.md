@@ -79,6 +79,7 @@ The client DHCP pool remained below these reservations.
 - virtual WLC deployment
 - centralized SSID configuration
 - WPA2-PSK
+- 2.4 GHz RF channel planning using non-overlapping channels 1, 6 and 11
 - DHCP-based client addressing
 - CDP, MAC-table and PoE validation
 - troubleshooting of CAPWAP/DTLS certificate failure
@@ -88,16 +89,13 @@ The client DHCP pool remained below these reservations.
 The most relevant issue occurred after Layer 3 connectivity had already been verified:
 
 ```text
-AP -> WLC ping       OK
-CAPWAP communication OK
-AP join              FAILED
+IP reachability       OK
+CAPWAP initiation     observed
+DTLS negotiation      FAILED
+AP join               FAILED
 ```
 
-The AP logs showed a DTLS certificate error. Investigation identified expired MIC certificates on the older Aironet APs. The WLC was configured to ignore MIC certificate expiry for these devices, allowing the APs to progress through the join process.
-
-This was an important distinction during troubleshooting: **successful IP connectivity did not imply successful CAPWAP association**.
-
-See [Troubleshooting](docs/troubleshooting.md).
+The AP MIC certificate had expired. Configuring the WLC to ignore MIC certificate expiry for the legacy APs allowed them to progress through the join process. **Successful ping did not mean a successful AP join.** See [Troubleshooting](docs/troubleshooting.md) for the sequence and resolution.
 
 ## Validation
 

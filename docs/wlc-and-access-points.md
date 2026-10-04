@@ -83,6 +83,16 @@ The final event design used:
 - AP mode: Local;
 - no VLAN tagging between switch and WLC in the simplified final design.
 
+The three APs used the conventional non-overlapping 20 MHz channel plan in the 2.4 GHz band:
+
+| Access Point | 2.4 GHz Channel |
+| --- | ---: |
+| AP1 | 1 |
+| AP2 | 6 |
+| AP3 | 11 |
+
+Distributing neighboring APs across channels 1, 6 and 11 reduced avoidable co-channel and adjacent-channel overlap. This channel selection does not guarantee zero interference.
+
 ## Operational Checks
 
 Useful AP checks included:

@@ -19,12 +19,13 @@ The logs showed DTLS certificate failure.
 The failure pattern separated the problem into two layers:
 
 ```text
-IP connectivity      OK
-CAPWAP reachability  OK
-DTLS / certificate   FAILED
+IP reachability      OK
+CAPWAP initiation    observed
+DTLS negotiation     FAILED
+AP join              FAILED
 ```
 
-The AP MIC certificate was found to be expired.
+The AP MIC certificate was found to be expired. CAPWAP initiation was observed, but DTLS negotiation did not complete, so the APs had not successfully joined the WLC.
 
 ### Resolution
 
@@ -41,7 +42,7 @@ After this change, the APs could progress through the join process.
 
 ### Lesson
 
-A successful ping only verifies IP reachability. It does not validate the complete CAPWAP/DTLS control-plane process.
+The key distinction was that successful IP reachability did not imply a completed CAPWAP/DTLS association or successful AP join.
 
 ---
 

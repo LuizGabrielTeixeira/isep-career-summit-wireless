@@ -45,3 +45,7 @@ show cdp neighbors
 ```
 
 were useful because they validated physical and Layer 2 behavior before troubleshooting higher-layer wireless problems.
+
+## RF channel planning matters
+
+Distributing the neighboring APs across 2.4 GHz channels 1, 6 and 11 reduced avoidable channel overlap in this deployment.
